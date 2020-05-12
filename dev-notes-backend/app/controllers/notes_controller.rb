@@ -20,8 +20,8 @@ class NotesController < ApplicationController
    @note = @user.blogs.build(note_params)
 
     if @note.save
-      render json: @note, include: [:user] status: :created, location: @note
-    else
+      render json: @note, include: [:user] ,   status: :created, location: @note
+    else 
       render json: @note.errors, status: :unprocessable_entity
     end
   end
