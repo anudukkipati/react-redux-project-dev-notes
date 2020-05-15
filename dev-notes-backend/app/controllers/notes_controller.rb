@@ -4,20 +4,23 @@ class NotesController < ApplicationController
   # GET /notes
   def index
     @notes = Note.all
-
-    render json: @notes, include: [:user]
+    # options ={}
+    # options[:include] = [:user]
+    # render json: NoteSerializer.new(@notes, options)   #
+    render json: @notes, include: [:user] 
   end
 
   # GET /notes/1
   def show
-    render json: @note, include: [:user]
+    
+    render json: @note, include: [:user] #, only: [:name]
   end
 
   # POST /notes
   def create
    # @note = Note.new(note_params)
    @user = User.find_or_create_by(name: user_params[:name])
-   @note = @user.blogs.build(note_params)
+   @note = @user.notes.build(note_params)
 
     if @note.save
       render json: @note, include: [:user] ,   status: :created, location: @note
