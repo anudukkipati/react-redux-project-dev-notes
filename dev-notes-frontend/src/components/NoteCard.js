@@ -3,9 +3,10 @@ import React from 'react'
 const NoteCard = ({note }) => {
     
     return (
-        <div>
-        <h3>{note.title}</h3>
-        <h3>{note.content}</h3>
+        <div className="notecard">
+        <h5>{note.title}</h5>
+        <p>{note.content}</p>
+        <p><a href={note.url} target="_blank" rel="noopener noreferrer">Click here to to go to the link</a></p>
     </div>
     )
    

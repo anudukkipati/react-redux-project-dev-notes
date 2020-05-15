@@ -17,7 +17,7 @@ class NotesContainer extends Component {
      
         return(
             <React.Fragment>
-             <h5>Notes</h5>
+             
            
              <Notes notes={this.props.notes}/>
          </React.Fragment>
