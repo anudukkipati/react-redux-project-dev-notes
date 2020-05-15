@@ -1,4 +1,4 @@
-.App {
+/*.App {
   text-align: center;
 }
 
@@ -35,4 +35,21 @@
   to {
     transform: rotate(360deg);
   }
+}*/
+h1 {
+  text-align: center;
+}
+  ul{
+  list-style: none;
+}
+.navbar li{
+  float: left;
+}
+li a {
+  text-decoration: none;
+  padding: 8px;
+
+}
+.home{
+  padding-left: 20px;
 }
