@@ -7,11 +7,13 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import notesReducer from './reducers/notesReducer'
+import noteReducer from './reducers/noteReducer'
 
 import * as serviceWorker from './serviceWorker';
 const rootReducer = combineReducers (
   {
-    notes: notesReducer
+    notes: notesReducer,
+    note: noteReducer
   }
 )
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

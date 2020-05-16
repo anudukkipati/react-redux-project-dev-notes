@@ -18,9 +18,10 @@ class NotesController < ApplicationController
 
   # POST /notes
   def create
+   # byebug
    # @note = Note.new(note_params)
-   @user = User.find_or_create_by(name: user_params[:name])
-   @note = @user.notes.build(note_params)
+    @user = User.find_or_create_by(name: user_params[:name])
+    @note = @user.notes.build(note_params)
 
     if @note.save
       render json: @note, include: [:user] ,   status: :created, location: @note
@@ -49,9 +50,12 @@ class NotesController < ApplicationController
     def set_note
       @note = Note.find(params[:id])
     end
-
+    
+    def user_params
+      params.require(:user).permit(:name)
+    end
     # Only allow a trusted parameter "white list" through.
     def note_params
-      params.require(:note).permit(:title, :topic, :content)#removed , :user_id from strong params
+      params.require(:note).permit(:title, :topic, :content, :url)#removed , :user_id from strong params
     end
 end

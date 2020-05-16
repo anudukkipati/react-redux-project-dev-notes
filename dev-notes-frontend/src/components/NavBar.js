@@ -3,7 +3,7 @@ import { Switch } from 'react-router-dom'
 //import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom'
 
-export default () => {
+export default (props) => {
   return (
     <div className="navbar">
       <Switch>
